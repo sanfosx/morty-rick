@@ -5,15 +5,14 @@ import Personaje from './components/Personaje/Personaje'
 
 
 function App() {
+  // eslint-disable-next-line no-unused-vars
   const [URL , setURL]=useState('https://rickandmortyapi.com/api/character')
   const [data, setData] = useState(0)
   const [status, setStatus] = useState()
 
-  useEffect(() => {
-    fetchData();
-  }, [URL]);
+  
 
-  const fetchData = async () => {
+    const fetchData = async () => {
     try {
       const response = await fetch(URL);
       const jsonData = await response.json();
@@ -26,6 +25,11 @@ function App() {
     }
   };
 
+  useEffect(() => {
+    fetchData();
+    console.log(data)
+  }, []);
+
   return (
     <>
       {status === 'cargando' && <p>Cargando...</p>}
@@ -37,13 +41,9 @@ function App() {
           ))}
         </div>
       )}
-      {/*data.results.map((character) => (character.name))*/}
+    
       {status === 'error' && <p>Error al cargar los datos.</p>}
 
-      <p className="read-the-docs">
-        Sanfosx
-       
-      </p>
     </>
   )
 }

@@ -1,32 +1,48 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { useState, useEffect } from 'react'
 import './App.css'
+import Personaje from './components/Personaje/Personaje'
+
+
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [URL , setURL]=useState('https://rickandmortyapi.com/api/character')
+  const [data, setData] = useState(0)
+  const [status, setStatus] = useState()
+
+  useEffect(() => {
+    fetchData();
+  }, [URL]);
+
+  const fetchData = async () => {
+    try {
+      const response = await fetch(URL);
+      const jsonData = await response.json();
+      setData(jsonData);
+      console.log(data)
+      setStatus('ok');
+    } catch (error) {
+      setStatus('error');
+      console.error('Error al cargar los datos:', error);
+    }
+  };
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
+      {status === 'cargando' && <p>Cargando...</p>}
+      {status === 'ok' && (
+        <div>
+          <h2>Personajes de Rick and Morty:</h2>
+          {data.results.map((r) => (
+            <Personaje key={r.id} data={r}></Personaje>
+          ))}
+        </div>
+      )}
+      {/*data.results.map((character) => (character.name))*/}
+      {status === 'error' && <p>Error al cargar los datos.</p>}
+
       <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
+        Sanfosx
+       
       </p>
     </>
   )

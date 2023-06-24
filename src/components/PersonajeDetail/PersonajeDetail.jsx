@@ -8,6 +8,7 @@ function PersonajeDetail() {
     const { id } = useParams()
     // eslint-disable-next-line no-unused-vars
     const [status, setStatus] = useState()
+     // eslint-disable-next-line no-unused-vars
     const [URL, setURL] = useState(`https://rickandmortyapi.com/api/character/${id}`)
     const [data, setData] = useState(0)
     

@@ -1,5 +1,6 @@
 import {useState, useEffect} from 'react'
 import Personaje from '../Personaje/Personaje'
+import './ListPersonajes.css'
 
 function ListPersonajes() {
  // eslint-disable-next-line no-unused-vars
@@ -32,8 +33,8 @@ function ListPersonajes() {
      {status === 'cargando' && <p>Cargando...</p>}
      {status === 'ok' && (
         <>
-       <div>
-         <h2>Personajes:</h2>
+       <div className="list-personajes" >
+        
          {data.results.map((r) => (
            <Personaje key={r.id} data={r}></Personaje>
          ))}

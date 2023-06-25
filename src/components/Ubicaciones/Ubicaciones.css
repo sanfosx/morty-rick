@@ -1,0 +1,13 @@
+
+.card-ubicaciones-tittle{
+    display: flex;
+    align-content: space-between;
+    
+}
+
+.card-ubicaciones{
+    width: 18rem;
+    border: 1px solid orangered;
+    margin: 15px;
+    border-radius: 10px;
+}

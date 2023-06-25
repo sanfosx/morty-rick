@@ -1,5 +1,6 @@
 import {useState, useEffect} from 'react'
 import Ubicaciones from "../Ubicaciones/Ubicaciones";
+import './ListUbicaciones.css'
 
 function ListUbicaciones() {
   // eslint-disable-next-line no-unused-vars
@@ -31,8 +32,7 @@ function ListUbicaciones() {
      {status === 'cargando' && <p>Cargando...</p>}
      {status === 'ok' && (
         <>
-       <div>
-         <h2>Ubicaciones:</h2>
+       <div className="list-ubicaciones">
          {data.results.map((r) => (
            <Ubicaciones key={r.id} data={r}></Ubicaciones>
          ))}

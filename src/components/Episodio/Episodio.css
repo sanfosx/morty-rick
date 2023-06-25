@@ -1,0 +1,24 @@
+
+.card-episodios{
+    display: flex;
+    flex-direction: column;
+    width: 20rem;
+    height: 12rem;
+    border: 1px solid orangered;
+    background-color: #f9f9f9;
+    align-items:center;
+    justify-content:flex-start;
+    margin: 15px;
+    border-radius: 15px;
+    padding: 10px;
+}
+
+.card-content-episodios{
+  
+}
+.card-episodios-tittle{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { AiOutlineHeart, AiFillHeart } from 'react-icons/ai';
+import { BsCircle } from "react-icons/bs";
 import './Personaje.css'
 
 function Personaje(props) {
@@ -8,7 +9,7 @@ function Personaje(props) {
 
 
   return (
-    <seccion className="card-character">
+    <div className="card-character">
 
       {/*eslint-disable-next-line react/prop-types*/}
       <img src={props.data.image} alt="" className="img-character"/>
@@ -23,17 +24,16 @@ function Personaje(props) {
           {addFav ? (<AiFillHeart />) : (<AiOutlineHeart />)}
         </p>
       </div>
-      <li>{props.data.status} - {props.data.species}</li>
+      <p className="character-alive"> {<BsCircle  />}{props.data.status} - {props.data.species}</p>
       <p>Origin:</p>
       <p className="character-p">{props.data.origin.name}</p>
       <p> Last know location:</p>
       <p className="character-p">{props.data.location.name}</p>
 
        
-        {/*eslint-disable-next-line react/prop-types*/}
-        <Link to={`/personajes/${props.data.id}`}><p>Mas detalles</p> </Link>
+       {/* <Link to={`/personajes/${props.data.id}`}><p>Mas detalles</p> </Link>*/}
       </div>
-    </seccion>
+    </div>
   )
 }
 

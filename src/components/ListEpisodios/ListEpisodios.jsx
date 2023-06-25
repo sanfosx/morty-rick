@@ -1,5 +1,6 @@
 import {useState, useEffect} from 'react'
 import Episodio from '../Episodio/Episodio'
+import './ListEpisodios.css'
 
 function ListEpisodios() {
   // eslint-disable-next-line no-unused-vars
@@ -29,12 +30,11 @@ function ListEpisodios() {
  }, [urlApi]);
 
  return (
-   <>
+   <div>
      {status === 'cargando' && <p>Cargando...</p>}
      {status === 'ok' && (
         <>
-       <div>
-         <h2>Episodios:</h2>
+       <div className="list-episodios">
          {data.results.map((r) => (
            <Episodio key={r.id} data={r}></Episodio>
          ))}
@@ -47,7 +47,7 @@ function ListEpisodios() {
      {status === 'error' && <p>Error al cargar los datos.</p>}
 
      
-   </>
+   </div>
  )
 }
 

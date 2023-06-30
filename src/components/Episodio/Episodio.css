@@ -1,24 +1,28 @@
-
-.card-episodios{
+.card-episodios {
     display: flex;
     flex-direction: column;
     width: 20rem;
     height: 12rem;
     border: 1px solid orangered;
     background-color: #f9f9f9;
-    align-items:center;
-    justify-content:flex-start;
+    align-items: center;
+    justify-content: flex-start;
     margin: 15px;
     border-radius: 15px;
-    padding: 10px;
 }
 
-.card-content-episodios{
-  
-}
-.card-episodios-tittle{
+.card-content-episodios {}
+
+.card-episodios-tittle {
     width: 100%;
     display: flex;
+    margin-left: 15px;
+    margin-right: 15px;
     justify-content: space-between;
     align-items: center;
+}
+
+.card-episodios-tittle h3 {
+    margin-top: 15px;
+    padding-right: 15px;
 }

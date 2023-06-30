@@ -6,7 +6,7 @@ function ListEpisodios() {
   // eslint-disable-next-line no-unused-vars
  const [urlApi, setUrlApi]=useState('https://rickandmortyapi.com/api/episode?page=1')
  const [data, setData] = useState(0)
- const [status, setStatus] = useState()
+ const [status, setStatus] = useState("Cargando")
  
 
  
@@ -31,7 +31,7 @@ function ListEpisodios() {
 
  return (
    <div>
-     {status === 'cargando' && <p>Cargando...</p>}
+     {status === 'cargando' && <h1>Cargando...</h1>}
      {status === 'ok' && (
         <>
        <div className="list-episodios">
@@ -44,7 +44,7 @@ function ListEpisodios() {
        </>
      )}
    
-     {status === 'error' && <p>Error al cargar los datos.</p>}
+     {status === 'error' && <h1>Error al cargar los datos.</h1>}
 
      
    </div>

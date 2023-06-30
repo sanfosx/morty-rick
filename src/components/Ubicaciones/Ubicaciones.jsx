@@ -21,9 +21,6 @@ function Ubicaciones(props) {
         <h5>{props.data.dimension}</h5>
       </div>
 
-
-
-
     </>
   )
 }

@@ -18,8 +18,6 @@ function Episodio(props) {
         <h2>{props.data.name}</h2>
         {/*eslint-disable-next-line react/prop-types*/}
         <h5>{props.data.air_date}</h5>
-
-       
       </div>
       
   )

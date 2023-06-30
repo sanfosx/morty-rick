@@ -9,29 +9,27 @@ function Personaje(props) {
 
 
   return (
-    <div className="card-character">
 
+    <div className="card-character">
       {/*eslint-disable-next-line react/prop-types*/}
-      <img src={props.data.image} alt="" className="img-character"/>
+      <img src={props.data.image} alt="" className="img-character" />
 
       <div className="character-detail">
-        
-      
-      <div className="card-title">
-        {/*eslint-disable-next-line react/prop-types*/}
-      <h2>{props.data.name}</h2>
-      <p onClick={() => setAddFav(!addFav)} className="iconfav">
-          {addFav ? (<AiFillHeart />) : (<AiOutlineHeart />)}
-        </p>
-      </div>
-      <p className="character-alive"> {<BsCircle  />}{props.data.status} - {props.data.species}</p>
-      <p>Origin:</p>
-      <p className="character-p">{props.data.origin.name}</p>
-      <p> Last know location:</p>
-      <p className="character-p">{props.data.location.name}</p>
 
-       
-       {/* <Link to={`/personajes/${props.data.id}`}><p>Mas detalles</p> </Link>*/}
+        <div className="card-title">
+          {/*eslint-disable-next-line react/prop-types*/}
+          <h2>{props.data.name}</h2>
+          <p onClick={() => setAddFav(!addFav)} className="iconfav">
+            {addFav ? (<AiFillHeart />) : (<AiOutlineHeart />)}
+          </p>
+        </div>
+        <p className="character-alive"> {<BsCircle />}{props.data.status} - {props.data.species}</p>
+        <p>Origin:</p>
+        <p className="character-p">{props.data.origin.name}</p>
+        <p> Last know location:</p>
+        <p className="character-p">{props.data.location.name}</p>
+
+        <Link to={`/personaje/${props.data.id}`}><p>Mas detalles</p> </Link>
       </div>
     </div>
   )
